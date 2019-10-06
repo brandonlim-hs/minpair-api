@@ -1,0 +1,12 @@
+{
+  "name": "minpair-api",
+  "version": "1.0.0",
+  "description": "Minimal pairs API.",
+  "main": "index.js",
+  "repository": "https://github.com/brandonlim-hs/minpair-api",
+  "author": "Brandon Lim <brandonlim.lim@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.53.0"
+  }
+}
