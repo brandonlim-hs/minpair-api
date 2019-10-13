@@ -7,6 +7,7 @@
   "author": "Brandon Lim <brandonlim.lim@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "serverless": "^1.53.0"
+    "serverless": "^1.53.0",
+    "serverless-wsgi": "^1.7.3"
   }
 }
