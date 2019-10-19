@@ -1,7 +1,8 @@
 from flask import Flask
+import minpair
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
-    return "index"
+    return "minpair API: " + minpair.__version__

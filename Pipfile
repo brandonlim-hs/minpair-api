@@ -9,6 +9,7 @@ pytest = "*"
 
 [packages]
 flask = "*"
+minpair = "*"
 
 [requires]
 python_version = "3.7"

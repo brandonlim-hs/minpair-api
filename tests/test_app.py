@@ -5,4 +5,4 @@ import pytest
 def test_index():
     app.testing = True
     response = app.test_client().get("/")
-    assert b"index" in response.data
+    assert b"minpair API" in response.data
