@@ -12,6 +12,14 @@ def index():
 def vowel_minpair():
     vowels = request.args.getlist("vowels")
     pos = request.args.getlist("pos")
-    return {
-        "minimal_pairs": minpair.vowel_minpair(vowels, pos)
-    }
+    try:
+        minpairs = minpair.vowel_minpair(vowels, pos)
+        return {
+            "minimal_pairs": minpair.vowel_minpair(vowels, pos)
+        }
+    except Exception as e:
+        return {
+            "errors": [
+                {"message": str(e)}
+            ]
+        }
