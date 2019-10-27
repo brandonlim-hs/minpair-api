@@ -3,6 +3,12 @@ service: minpair-api
 provider:
   name: aws
   runtime: python3.7
+  environment:
+    NLTK_DATA: /opt/nltk_data
+
+package:
+  exclude:
+    - nltk/**
 
 functions:
   app:
@@ -14,6 +20,8 @@ functions:
       - http:
           path: /vowel
           method: get
+    layers:
+      - { Ref: NltkCorpusLambdaLayer }
 
 plugins:
   - serverless-python-requirements
@@ -25,3 +33,11 @@ custom:
     packRequirements: false
   pythonRequirements:
     dockerizePip: non-linux
+
+layers:
+  nltkCorpus:
+    path: nltk
+    name: NltkCorpus
+    description: Nltk corpus data.
+    compatibleRuntimes:
+      - python3.7
