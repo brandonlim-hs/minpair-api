@@ -3,6 +3,8 @@ service: minpair-api
 provider:
   name: aws
   runtime: python3.7
+  memorySize: 3008
+  timeout: 20
   environment:
     NLTK_DATA: /opt/nltk_data
 
