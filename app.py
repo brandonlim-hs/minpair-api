@@ -13,9 +13,13 @@ def vowel_minpair():
     vowels = request.args.getlist("vowels")
     pos = request.args.getlist("pos")
     try:
-        minpairs = minpair.vowel_minpair(vowels, pos)
+        generator = minpair.generator(**{
+            # Use corpus data from layer instead of downloading at runtime
+            'download_corpus': False,
+            'pos': pos
+        })
         return {
-            "minimal_pairs": minpair.vowel_minpair(vowels, pos)
+            "minimal_pairs": generator.vowel_minpair(vowels)
         }
     except Exception as e:
         return {
